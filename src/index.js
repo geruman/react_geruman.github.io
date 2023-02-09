@@ -1,17 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+class Title extends React.Component{
+	render(){
+		return(
+			<div class="container-fluid p-5 bg-primary text-white text-center">
+				<h1>My First Bootstrap Page</h1>
+				<p>Resize this responsive page to see the effect!</p> 
+			</div>
+		);
+	}
+}
+class Column extends React.Component{
+	render() {
+		return(
+			<div class="col-sm-4">
+				<h3>Column 3</h3>        
+				<img src="images/yinyang3.gif"/>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+			</div>
+		);
+	}
+  
+}
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class Game extends React.Component {
+  render() {
+    return (
+      <div>
+        <Title />
+        <div class="container mt-5">
+          <div class="row">
+            <Column />
+            <Column />
+            <Column />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+// ========================================
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Game />);
